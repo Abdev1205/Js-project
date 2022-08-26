@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Detail</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+
+<body style="text-align: center; margin:auto;">
+    <div id="country" class="text-center">
+        <div class="text-center cry">
+            <input id="searchBox" class="form-control form-control-lg search" type="text"
+                placeholder="Enter Country Name To Search" name="countryName" aria-label="Country Information">
+
+        </div>
+        <div class="btn btn-primary btn-sm" onclick="data()">Search</div>
+
+        <div id="output">
+
+        </div>
+
+    </div>
+    <div id="container" class="">
+        
+    </div>
+
+</body>
+
+<script>
+    function data() {
+        const getReference = document.querySelector('#searchBox');
+        const userInput = getReference.value;
+
+
+        const container = document.querySelector('#container');
+        const request = new XMLHttpRequest();
+        request.open('get', "https://restcountries.com/v3.1/name/" + userInput);
+        request.send();
+
+        // to get response
+
+        request.addEventListener('load', function () {
+            // console.log(this.responseText);
+            const [data] = JSON.parse(this.responseText);
+            var cname = data.name;
+            var cCapital = data.capital;
+            var cContinent = data.Continents;
+            var cCurrency = data.Currencies;
+            var cFlags = data.flags;
+            var cLanguages = data.languages;
+            var cPopulation = data.Population
+
+            // toFind=[name,capital,continent,currency,flag,language,population]
+            const htmlData = `
+            <div class="card " style="width: 14rem; ">
+            <img src="${data.flags.png}" class="card-img-top text-center" alt=".">
+                <div class="card-body">
+                    <h1 class="card-title">${data.name.common}</h1>
+                        
+                </div>
+                    <div class="card-body">
+                        <h6>Capital    : ${data.capital}</h6>
+                        <h6>Continents : ${data.continents}</h6>
+                        <h6>Neighbor   : ${data.borders}</h6>
+                        <h6>Population : ${data.population}</h6>
+                        <h6>Time Zones : ${data.timezones}</h6>
+                        
+
+
+    
+                    </div>
+            </div>
+            `;
+            container.insertAdjacentHTML("afterbegin",htmlData);
+
+        })
+    }
+</script>
+
+</html>

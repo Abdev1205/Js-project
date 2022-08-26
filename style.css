@@ -1,0 +1,45 @@
+#country{
+    /* margin-left: 20rem;
+    margin-top: 20rem; */
+    text-align: center;
+    
+    padding-top: 1rem;
+    padding-left: 25rem;
+    padding-right: 25rem;
+    padding-bottom: 5rem;
+
+  
+    
+
+}
+.form-control{
+    width: 10rem;
+}
+.search{
+    text-align: center;
+    background-color: dimgrey;
+    width: 1rem;
+    height: 1px;
+    margin-top: 1rem;
+    padding-left: 20rem;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+    /* padding-left: 0rem;
+    padding-right: 0rem; */
+    padding-bottom: 2rem;
+    width: 5rem;
+}
+#container{
+    text-align: center;
+
+}
+.card-body{
+    text-align: left;
+}
+body{
+    text-align: center;
+}
+.card{
+   margin: auto; 
+   height: 100rem;
+}
