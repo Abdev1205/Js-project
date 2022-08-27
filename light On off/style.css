@@ -1,0 +1,18 @@
+.main-content{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+}
+h1{
+    padding-bottom: 4rem;
+    color: white;
+}
+#off-bulb{
+    size: 10px;
+}
+.content{
+    margin-top: 3rem;  
+}
+img{
+    size: 300px;
+}

@@ -1,0 +1,14 @@
+.card{
+    position: absolute;
+    margin-top: 10rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    
+
+}
+.card-header{
+    background-color: aliceblue;
+}
+.main{
+    color: rgb(0, 0, 17);
+}
